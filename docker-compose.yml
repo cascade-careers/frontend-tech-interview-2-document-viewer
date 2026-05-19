@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "5173:5173"
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/mock-api/node_modules
+    stdin_open: true
+    tty: true
