@@ -2,7 +2,10 @@
   "name": "Cascade Frontend Interview — Tech 2",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
   "postCreateCommand": "npm install && cd mock-api && npm install",
-  "postStartCommand": "nohup sh -c 'cd mock-api && npx tsx server.ts' > /tmp/mock-api.log 2>&1 & nohup sh -c 'npm run dev' > /tmp/vite.log 2>&1 &",
+  "postStartCommand": {
+    "mock-api": "cd mock-api && npx tsx server.ts",
+    "vite": "npm run dev"
+  },
   "forwardPorts": [5173, 3001],
   "portsAttributes": {
     "5173": { "label": "Vite Dev Server", "onAutoForward": "openBrowser" },
